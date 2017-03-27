@@ -1,0 +1,6 @@
+{
+  "name": "Image Search Abstraction Layer",
+  "description": "A Node.js app using Express",
+  "repository": "https://github.com/Jamaurz/imageSerach.git",
+  "keywords": ["node", "express"],
+}
