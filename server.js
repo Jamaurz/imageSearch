@@ -3,6 +3,11 @@ var bodyparser = require('body-parser')
 var cors = require('cors')
 var path = require('path')
 
+/* serch image google*/
+var keyAPI = process.env.keyAPI;
+var keyCSE = process.env.keyCSE;
+var GoogleImages = require('google-images');
+var client = new GoogleImages(keyCSE, keyAPI);
 /** mongoose */
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
@@ -24,13 +29,6 @@ app.use(cors())
 app.use(bodyparser.json())
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade')
-
-/* serch image google*/
-var keyAPI = process.env.keyAPI;
-var keyCSE = process.env.keyCSE;
-
-var GoogleImages = require('google-images');
-var client = new GoogleImages(keyCSE, keyAPI);
 
 /** index */
 app.get('/', function(req, res) {
